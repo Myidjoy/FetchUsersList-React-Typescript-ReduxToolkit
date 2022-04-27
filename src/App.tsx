@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import { fetchUsers} from "./reducers/userReducer"
 
 function App() {
+  const {status, users} = useAppSelector((state) => state.users)
+  const dispatch = useAppDispatch()
+  console.log(users)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div> 
+        {status === 'loading' 
+        ? <div>загрузка</div>:
+        status === 'succeeded'
+        ?  users.map((user) => <div key={user.id}>{user.name}</div>):     
+        <div>юзеров нет]</div>
+        }
+      </div>
+    <button onClick={() => {
+      dispatch(fetchUsers())
+    }}>
+      кнопка
+    </button>
+    </>
+    
   );
 }
 
