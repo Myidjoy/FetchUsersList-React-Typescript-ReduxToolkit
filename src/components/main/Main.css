@@ -1,0 +1,11 @@
+.main {
+    position: absolute;
+    width: 600px;
+    height: 700px;
+    padding: 0.5rem;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

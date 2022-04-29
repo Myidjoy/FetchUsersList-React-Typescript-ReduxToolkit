@@ -1,0 +1,24 @@
+.authorisation__form {
+    height: 100%;
+    padding: 0.8em;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 6rem;
+}
+
+.authorisation__form button {
+    width: 100%;
+    height: 2em;
+    margin: 0.8em 0;
+    outline: none;
+    border: none;
+    background: #fff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+}
+
+.authorisation__form button:active {
+    transform: scale(0.97);
+  }

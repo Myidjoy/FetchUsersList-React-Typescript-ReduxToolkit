@@ -1,0 +1,36 @@
+.authorisation__loading {
+    margin: 2rem 0.1rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.authorisation__loading > label {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    color:aliceblue;
+    font-size: 0.5rem;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    transform: translate(-50%, -50%);
+}
+
+.authorisation__loading > div {
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    animation: spin 0.9s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
