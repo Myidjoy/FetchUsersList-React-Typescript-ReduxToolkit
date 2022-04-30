@@ -1,12 +1,10 @@
 .authorisation {
-  border: 1px solid #49486d;
   border-radius: 0.5em;
   position: absolute;
   top: 1%;
   bottom: 1%;
   left: 1%;
   right: 1%;
-  background: linear-gradient(-45deg, #367694, #2d647e);
-  box-shadow: 0 0 10px aliceblue;
+  background: linear-gradient(180deg, #49a0c8, #234f63);
   z-index: 3;
 }

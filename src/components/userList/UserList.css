@@ -5,10 +5,7 @@
   bottom: 1%;
   left: 1%;
   right: 1%;
-  border: 1px solid #49486d;
   border-radius: 0.5em;
   background: linear-gradient(-45deg, #306a84, #234f63);
-  /* background-color: red; */
-  box-shadow: 0 0 10px #8f8f8f;
   z-index: 2;
 }

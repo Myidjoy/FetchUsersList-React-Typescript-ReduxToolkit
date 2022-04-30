@@ -1,0 +1,13 @@
+.users-list__user {
+  border-bottom: 1px solid rgba(240, 248, 255, 0.322);
+  padding: 0.8rem 0;
+}
+.user-list__container-info {
+  display: inline-block;
+  width: 80px;
+  margin-right: 0.5rem;
+}
+
+.user-list__info {
+  opacity: 0.6;
+}

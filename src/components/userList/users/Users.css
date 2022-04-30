@@ -1,0 +1,7 @@
+.users-list {
+  height: 95%;
+  overflow-y: scroll;
+  list-style: none;
+  padding: 0.3rem;
+  color:aliceblue;
+}

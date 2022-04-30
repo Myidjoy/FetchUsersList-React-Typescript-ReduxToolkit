@@ -7,7 +7,7 @@ const Header: FC = (): JSX.Element => {
     <header className='user-list__header'>
       <div className='user-list__input'>
         <input id='find'></input>
-        <label htmlFor='find'>Find users</label>
+        <label htmlFor='find'>Find user</label>
       </div>
     </header>
   );
