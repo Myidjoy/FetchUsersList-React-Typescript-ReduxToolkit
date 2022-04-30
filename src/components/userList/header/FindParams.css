@@ -1,0 +1,23 @@
+.user-list__parameters {
+  display: flex;
+  position: absolute;
+  padding: 0.2rem;
+  right: 0;
+  bottom: 0;
+  list-style: none;
+}
+
+.user-list__button {
+  margin: 0 0.5rem;
+}
+
+.user-list__button > button {
+  background: none;
+  border: none;
+  outline: none;
+  color: aliceblue;
+}
+
+.user-list__button > button:active {
+  transform: scale(0.97);
+}

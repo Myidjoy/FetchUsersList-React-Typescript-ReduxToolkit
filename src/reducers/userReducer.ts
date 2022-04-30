@@ -5,6 +5,8 @@ import axios from 'axios';
 const initialState: IInitialState = {
   users: [],
   status: '',
+  searchingUsers: [],
+  findAttribute: 'name'
 };
 
 export const fetchUsers = createAsyncThunk('fetchUsers', async () => {
@@ -22,10 +24,13 @@ const userSlice = createSlice({
     },
     deleteUser(state, action: PayloadAction<number>) {
       state.users = state.users.filter(user => user.id !== action.payload);
+    },
+    filterInUsers(state, action: PayloadAction<IUser[]>) {
+      state.searchingUsers = action.payload;
+    },
+    changeFindAttribute(state, action: PayloadAction<string>) {
+      state.findAttribute = action.payload;
     }
-    // addUser(state) {      
-    //     state.users.push({id: Date.now(), name: 'Vasya', age: 26}); 
-    // }
   },
   extraReducers(builder) {
     builder
@@ -43,6 +48,6 @@ const userSlice = createSlice({
   }
 });
 
-export const {addUser, deleteUser} = userSlice.actions;
+export const {addUser, deleteUser, filterInUsers, changeFindAttribute} = userSlice.actions;
 // export const {addUser} = userSlice.actions;
 export default userSlice.reducer;

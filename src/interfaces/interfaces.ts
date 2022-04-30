@@ -25,5 +25,7 @@ export interface ILoginState {
 
 export interface IInitialState {
   users: IUser[];
+  searchingUsers: IUser[]; 
   status: string;
+  findAttribute: string;
 }

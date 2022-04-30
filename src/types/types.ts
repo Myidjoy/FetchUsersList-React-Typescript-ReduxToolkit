@@ -15,3 +15,8 @@ export type Input = {
     placeholder: string
     value: string
 }
+export type ButtonType = {
+    id: number,
+    name: string,
+    active: boolean,
+  }

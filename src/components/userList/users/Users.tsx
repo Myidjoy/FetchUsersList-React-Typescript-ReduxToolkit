@@ -6,12 +6,12 @@ import './Users.css';
 
 
 const Users: FC = (): JSX.Element => {
-  const {users} = useAppSelector(state => state.users);
+  const {users, searchingUsers} = useAppSelector(state => state.users);
   return (
     <ul className='users-list'>
       {
-        users.length 
-          ? users.map(user =>( 
+        users.length
+          ? ((searchingUsers.length && searchingUsers)|| users).map(user =>( 
             <NewUser 
               key={user.id}
               name={user.name}

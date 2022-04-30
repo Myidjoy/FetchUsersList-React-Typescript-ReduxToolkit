@@ -3,14 +3,15 @@
   margin-top: 0.6rem;
 }
 
-.user-list__input {
+.user-list__input-container {
   padding: 0.2rem;
   position: relative;
   border-bottom: 1px solid #fff;
   border-radius: 0.2rem;
+  width: 60%;
 }
 
-.user-list__input > label {
+.user-list__input-container > label {
 position: absolute;
 top: 50%;
 left: 2%;
@@ -19,7 +20,7 @@ color: silver;
 transition: 0.3s;
 }
 
-.user-list__input > input {
+.user-list__input-container > input {
   border: none;
   outline: none;
   width: 100%;
@@ -30,7 +31,15 @@ transition: 0.3s;
   color:aliceblue
 }
 
-.user-list__input > input:focus + label {
+.user-list__input_active + label {
+  top: -1.2rem;
+  left: 0.1rem;
+  color:aliceblue;
+  transform: scale(0.97);
+  pointer-events: none;
+}
+
+.user-list__input-container > input:focus + label {
   top: -1.2rem;
   left: 0.1rem;
   color:aliceblue;
