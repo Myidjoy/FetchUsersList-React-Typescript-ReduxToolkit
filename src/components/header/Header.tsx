@@ -11,4 +11,4 @@
 // }
 
 // export default Header
-export {}
+export {};

@@ -1,5 +1,5 @@
-import React from 'react'
-import LinksList from './linksList/LinksList'
+import React from 'react';
+import LinksList from './linksList/LinksList';
 
 
 const Navigation = (): JSX.Element => {
@@ -7,7 +7,7 @@ const Navigation = (): JSX.Element => {
     <nav>
       <LinksList/>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

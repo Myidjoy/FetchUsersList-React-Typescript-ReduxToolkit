@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {FC} from 'react';
+import Header from './header/Header';
+import './UserList.css';
 
-// type Props = {}
 
-const UserList = ():JSX.Element => {
+const UserList: FC = ():JSX.Element => {
   return (
-    <div>UserList</div>
-  )
-}
+    <section className='user-list'>
+      <Header/>
+    </section>  
+  );
+};
 
-export default UserList
+export default UserList;

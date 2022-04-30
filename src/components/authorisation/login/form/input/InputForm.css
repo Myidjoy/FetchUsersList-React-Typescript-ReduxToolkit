@@ -1,11 +1,29 @@
 .authorisation__line {
+    position: relative;
     margin: 0.8em 0;
     padding: 0.3em 0.1em;
-    border: 1px solid #49486d;
+    width: 70%;
     border-radius: 0.5em;
     display: flex;
     align-items: center;
-    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.authorisation__line > label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:aliceblue;
+    transition: 0.3s;
+}
+
+.authorisation__line_active input + label{
+    top: -50%;
+}
+
+.authorisation__line input:focus + label {
+    top: -50%;
 }
 
 .authorisation__line input {
@@ -16,14 +34,6 @@
     border: none;
     background: none;
     text-align: center;
+    caret-color: aliceblue;
+    color: aliceblue;
 }
-
-.authorisation__line input::placeholder {
-    font-size: 1.2em;
-    text-align: center;
-    color: rgb(133, 133, 133);
-}
-
-.authorisation__line input:focus::placeholder {
-    color: lightgrey;
-  }

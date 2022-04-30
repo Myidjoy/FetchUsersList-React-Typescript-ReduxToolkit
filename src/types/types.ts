@@ -13,4 +13,5 @@ export type Input = {
     type: string,
     required: boolean,
     placeholder: string
+    value: string
 }

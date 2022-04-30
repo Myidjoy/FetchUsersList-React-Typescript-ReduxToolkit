@@ -1,13 +1,13 @@
-import React from 'react'
-import Link from './link/Link'
+import React from 'react';
+import Link from './link/Link';
 
 
-const LinksList = () => {
+const LinksList = (): JSX.Element => {
   return (
     <ul>
       <Link/>
     </ul>
-  )
-}
+  );
+};
 
-export default LinksList
+export default LinksList;

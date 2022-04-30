@@ -3,17 +3,22 @@
     padding: 0.8em;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    align-items: center;
     margin-top: 6rem;
 }
 
 .authorisation__form button {
-    width: 100%;
+    width: 5em;
     height: 2em;
     margin: 0.8em 0;
+    /* padding: 0.3rem; */
+    font-size: 1rem;
     outline: none;
     border: none;
-    background: #fff;
+    color:aliceblue;
+    border-right: 1px solid aliceblue;
+    border-left: 1px solid aliceblue;
+    background: none;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     border-radius: 0.5em;
