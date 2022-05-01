@@ -14,6 +14,7 @@ const Users: FC = (): JSX.Element => {
           ? ((searchingUsers.length && searchingUsers)|| users).map(user =>( 
             <NewUser 
               key={user.id}
+              id={user.id}
               name={user.name}
               username={user.username} 
               email={user.email}              

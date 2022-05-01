@@ -24,6 +24,7 @@ const userSlice = createSlice({
     },
     deleteUser(state, action: PayloadAction<number>) {
       state.users = state.users.filter(user => user.id !== action.payload);
+      state.searchingUsers = state.searchingUsers.filter(user => user.id !== action.payload);
     },
     filterInUsers(state, action: PayloadAction<IUser[]>) {
       state.searchingUsers = action.payload;
