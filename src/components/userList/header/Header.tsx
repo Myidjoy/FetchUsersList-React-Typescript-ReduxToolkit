@@ -7,7 +7,7 @@ import FindParams from './FindParams';
 
 
 const Header: FC = (): JSX.Element => {
-  const {users} = useAppSelector(state => state.users);
+  const {users, findAttribute} = useAppSelector(state => state.users);
   const dispatch = useAppDispatch();
   const [value, setValue] = useState<string>('');
   const classActive: (string| null)[] = [];
@@ -17,7 +17,21 @@ const Header: FC = (): JSX.Element => {
     classActive.push('user-list__input_active');
 
   const searchUser = (value: string): void => {
-    const filtredUsers: IUser[] = users.filter(user => user.name.toLowerCase().includes(value.toLowerCase()));
+    
+    const result = (): IUser[] => {
+      switch (findAttribute) {
+      case 'nickname': 
+        return  users.filter(user =>  user.username.toLowerCase().includes(value.toLowerCase()));
+
+      case 'email': 
+        return  users.filter(user =>  user.email.toLowerCase().includes(value.toLowerCase()));
+
+      default:
+        return  users.filter(user =>  user.name.toLowerCase().includes(value.toLowerCase()));
+      }
+        
+    };
+    const filtredUsers: IUser[] = result();
 
     dispatch(filterInUsers(filtredUsers));
   };
