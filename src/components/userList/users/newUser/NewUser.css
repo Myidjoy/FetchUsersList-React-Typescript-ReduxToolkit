@@ -23,5 +23,11 @@
 }
 
 .user-list__dell-button > span {
+  opacity: 0;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.users-list__user:hover .user-list__dell-button > span {
+  opacity: 1;
 }
