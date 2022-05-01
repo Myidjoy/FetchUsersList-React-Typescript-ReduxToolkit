@@ -1,0 +1,42 @@
+.user-list__add-user-form {
+  display: flex;
+  position: relative;
+  border-radius: 0.2rem;
+  border-bottom: 1px solid aliceblue;
+  padding-bottom: 0.3rem;
+  margin: 2rem 0rem 2rem 0;
+}
+
+.user-list__input-info > input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  color: aliceblue;
+}
+
+.user-list__input-info > input::placeholder {
+  color: rgba(240, 248, 255, 0.359);
+}
+
+.user-list__add-user-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-left: 1px solid aliceblue;
+  border-right: 1px solid aliceblue;
+  border-radius: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.user-list__add-user-button > button {
+  background: none;
+  border: none;
+  color: aliceblue;
+  outline: none;
+  padding: 0.1rem 1rem;
+}
+
+.user-list__add-user-button > button:active {
+  transform: scale(0.97);
+}

@@ -11,7 +11,6 @@ const initialState: IInitialState = {
 
 export const fetchUsers = createAsyncThunk('fetchUsers', async () => {
   const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-  console.log(response.data.length);
   return response.data;
 });
 
