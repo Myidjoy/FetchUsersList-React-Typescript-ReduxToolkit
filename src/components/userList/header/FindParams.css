@@ -1,10 +1,10 @@
 .user-list__parameters {
   display: flex;
   position: absolute;
-  padding: 0.2rem;
   right: 0;
   bottom: 0;
   list-style: none;
+  margin-top: 0.6rem;
 }
 
 .user-list__button {

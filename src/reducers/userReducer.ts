@@ -41,13 +41,11 @@ const userSlice = createSlice({
         state.status = 'succeeded';
         state.users = state.users.concat(action.payload);
       })
-      .addCase(fetchUsers.rejected, (state, action) => {
+      .addCase(fetchUsers.rejected, (state) => {
         state.status = 'failed';
-        console.log(action.error.message);
       });
   }
 });
 
 export const {addUser, deleteUser, filterInUsers, changeFindAttribute} = userSlice.actions;
-// export const {addUser} = userSlice.actions;
 export default userSlice.reducer;

@@ -1,0 +1,12 @@
+.user-list__button_active {
+  width: 70px;
+  
+  border-radius: 0.3rem;
+  border-bottom: 1px solid aliceblue;
+  
+}
+
+.user-list__button {
+  width: 70px;
+  text-align: center;
+}
