@@ -1,7 +1,5 @@
-import React, { FC } from 'react';
-import { useAppDispatch } from '../../../../app/hooks';
+import React, { FC, useState, useRef, useEffect } from 'react';
 import './NewUser.css';
-import{ deleteUser } from '../../../../reducers/userReducer';
 
 type Props = {
   name: string,
@@ -11,23 +9,44 @@ type Props = {
 }
 
 const NewUser: FC<Props> = (props): JSX.Element => {
-  const dispatch = useAppDispatch();
+  const nameRef = useRef<HTMLInputElement>(null);
+
+  const [edit, setEdit] = useState(false);
+  const classActive = edit ? 'user-list__edit_active' : '';
+  const classDisable = edit ? 'user-list__text_disabled': '';
+
+  useEffect(() => {
+    if(nameRef.current && edit){
+      nameRef.current.focus(); 
+    }
+  }, [edit]);
 
   return (
     <li className='users-list__user'>
-      <div className="">
+      <div className="users-list__wrapper">
         <div className="user-list__container-info">
           <label className='user-list__info'>name: </label>
         </div>
-        <span>{props.name}</span>
+        <span 
+          className={classDisable}
+          onDoubleClick={(): void => {
+            setEdit(true);  
+            
+          }}>{props.name}</span>
+        <input 
+          ref={nameRef}
+          id='input'
+          onBlur={(): void => { 
+            setEdit(false);
+          }} className={classActive} />
       </div>
-      <div className="">
+      <div className="users-list__wrapper">
         <div className="user-list__container-info">
           <label className='user-list__info'>nickname: </label>
         </div>
         <span>{props.username}</span>
       </div>
-      <div className="">
+      <div className="users-list__wrapper">
         <div className="user-list__container-info">
           <label className='user-list__info'>email: </label>
         </div>
@@ -35,7 +54,7 @@ const NewUser: FC<Props> = (props): JSX.Element => {
       </div>
       <div className="user-list__dell-button">
         <span onClick={(): void => {
-          dispatch(deleteUser(props.id));
+          console.log(1);
         }}>&#10006;</span>
       </div>
     </li>

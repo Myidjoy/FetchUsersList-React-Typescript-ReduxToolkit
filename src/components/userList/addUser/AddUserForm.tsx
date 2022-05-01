@@ -5,7 +5,7 @@ import { addUser } from '../../../reducers/userReducer';
 import { IUser } from '../../../interfaces/interfaces';
 
 enum LengthLimit {
-  maxLength = 100,
+  maxLength = 50,
   minLength = 1
 }
 const AddUserForm: FC = (): JSX.Element => {

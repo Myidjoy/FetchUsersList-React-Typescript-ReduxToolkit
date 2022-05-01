@@ -6,7 +6,7 @@ const initialState: IInitialState = {
   users: [],
   status: '',
   searchingUsers: [],
-  findAttribute: 'name'
+  findAttribute: 'name',
 };
 
 export const fetchUsers = createAsyncThunk('fetchUsers', async () => {

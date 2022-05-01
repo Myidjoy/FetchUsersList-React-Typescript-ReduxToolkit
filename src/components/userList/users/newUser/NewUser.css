@@ -31,3 +31,35 @@
 .users-list__user:hover .user-list__dell-button > span {
   opacity: 1;
 }
+
+.users-list__wrapper {
+  position: relative;
+}
+
+.users-list__wrapper > span {
+  cursor: default;
+}
+
+.users-list__wrapper > input {
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 460px;
+  border: none;
+  outline: none;
+  padding-left: 6px;
+  /* background: #306a84; */
+  background: none;
+  color: aliceblue;
+  caret-color: aliceblue;
+  left: 15%;
+  z-index: 2;
+}
+
+.users-list__wrapper .user-list__edit_active {
+  display: inline;
+}
+
+.user-list__text_disabled {
+  opacity: 0;
+}
