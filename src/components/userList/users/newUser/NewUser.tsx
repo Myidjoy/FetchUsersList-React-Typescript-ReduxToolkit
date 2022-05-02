@@ -61,6 +61,7 @@ const NewUser: FC<Props> = (props): JSX.Element => {
           {props.name}
         </span>
         <input 
+          maxLength={50}
           ref={nameRef}
           onKeyUp={(event): void => {
             if(event.key ==='Enter') {
@@ -90,6 +91,7 @@ const NewUser: FC<Props> = (props): JSX.Element => {
         </div>
         <span>{props.username}</span>
         <input 
+          maxLength={50}
           ref={nickRef}
           onKeyUp={(event): void => {
             if(event.key ==='Enter') {
@@ -118,6 +120,7 @@ const NewUser: FC<Props> = (props): JSX.Element => {
         </div>
         <span>{props.email}</span>
         <input 
+          maxLength={50}
           ref={mailRef}
           onKeyUp={(event): void => {
             if(event.key ==='Enter') {

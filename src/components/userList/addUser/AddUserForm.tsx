@@ -13,8 +13,6 @@ const AddUserForm: FC = (): JSX.Element => {
   const [valueNickname, setValueNickname] = useState('');
   const [valueEmail, setValueEmail] = useState('');
   const dispatch = useAppDispatch();
-  // const users = useAppSelector(state => state.users.users);
-  // useEffect(()=>{}, [users]);
 
   const userCreate = (): IUser => {
     const newUser: IUser = {
