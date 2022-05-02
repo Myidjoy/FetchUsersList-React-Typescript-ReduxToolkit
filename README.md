@@ -7,6 +7,11 @@ the password: admin,
 
 next step is to click on the button 'apply'
 
+You can change fields ( name, username, email) by double clicking on them.
+
+The "Find" field should be cleared by yourself.
+
+
 //////////////////////////////////////////
 
 At first you should create a directory for the project.
