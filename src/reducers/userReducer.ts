@@ -67,6 +67,9 @@ const userSlice = createSlice({
         state.searchingUsers = state.users;
       }   
       
+    },
+    resetUsers(state){
+      state.searchingUsers = state.users;
     }
     
   },
@@ -85,5 +88,12 @@ const userSlice = createSlice({
   }
 });
 
-export const {addUser, deleteUser, filterInUsers, changeFindAttribute, changeTextInUser} = userSlice.actions;
+export const {
+  addUser, 
+  deleteUser, 
+  filterInUsers, 
+  changeFindAttribute, 
+  changeTextInUser,
+  resetUsers
+} = userSlice.actions;
 export default userSlice.reducer;

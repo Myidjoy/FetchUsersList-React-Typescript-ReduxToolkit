@@ -1,21 +1,22 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useRef} from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import './Header.css';
 import { filterInUsers } from '../../../reducers/userReducer';
 import { IUser } from '../../../interfaces/interfaces';
 import FindParams from './FindParams';
+import ClearButton from './ClearButton';
 
 
 const Header: FC = (): JSX.Element => {
+  const searchRef = useRef<HTMLInputElement>(null);
   const {users, findAttribute} = useAppSelector(state => state.users);
   const dispatch = useAppDispatch();
-  const [value, setValue] = useState<string>('');
   const classActive: (string| null)[] = [];
 
-  value === ''
+  searchRef.current?.value.trim() === ''
     ? classActive.length = 0:
     classActive.push('user-list__input_active');
-
+    
   const searchUser = (value: string): void => {
     
     const result = (): IUser[] => {
@@ -40,15 +41,18 @@ const Header: FC = (): JSX.Element => {
     <header className='user-list__header'>
       <div className='user-list__input-container'>
         <input 
+          ref={searchRef}
           className={classActive.join('')}
-          onChange={(event): void => {
-            setValue(event.target.value);
-            searchUser(event.target.value);
+          onChange={(): void => {
+            if(searchRef.current){
+              searchUser(searchRef.current.value);
+            }            
           }} 
           id='find'></input>
         <label htmlFor='find'>Find user</label>
       </div>
       <FindParams/>
+      <ClearButton clean={searchRef.current} classArray={classActive}/>
     </header>
   );
 };

@@ -1,0 +1,14 @@
+.user-list__clear-button {
+  position: absolute;
+  top: 5px;
+  color: aliceblue;
+  background: none;
+  left: 16.5rem;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.user-list__clear-button:active {
+  transform: scale(0.97);
+}
