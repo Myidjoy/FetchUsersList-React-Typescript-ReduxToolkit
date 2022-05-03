@@ -50,7 +50,6 @@ const NewUser: FC<Props> = (props): JSX.Element => {
         id='name' 
         onDoubleClick={(event): void => {
           event.stopPropagation();
-          // event.currentTarget.id
           setNameEdit(true);    
         }}
         className="users-list__wrapper">
