@@ -1,7 +1,8 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import { useAppDispatch } from '../../../../app/hooks';
-import { changeTextInUser, deleteUser} from '../../../../reducers/userReducer';
+import { deleteUser } from '../../../../reducers/userReducer';
 import './NewUser.css';
+import InputEdit from './InputEdit';
 
 type Props = {
   name: string,
@@ -14,7 +15,6 @@ const NewUser: FC<Props> = (props): JSX.Element => {
   const nameRef = useRef<HTMLInputElement>(null);
   const nickRef = useRef<HTMLInputElement>(null);
   const mailRef = useRef<HTMLInputElement>(null);
-
   const [nameEdit, setNameEdit] = useState(false);
   const [nickNameEdit, setNickNameEdit] = useState(false);
   const [emailEdit, setEmailEdit] = useState(false);
@@ -60,23 +60,11 @@ const NewUser: FC<Props> = (props): JSX.Element => {
         <span  className={nameEdit ? 'user-list__text_disabled': ''}>
           {props.name}
         </span>
-        <input 
-          maxLength={50}
-          ref={nameRef}
-          onKeyUp={(event): void => {
-            if(event.key ==='Enter') {
-              setNameEdit(false);    
-            }
-          }}
-          onChange={(): void => {
-            if(nameRef.current){
-              dispatch(changeTextInUser({id: props.id, value: nameRef.current.value, text: 'name'}));
-            }  
-          }}
-          onBlur={(): void => { 
-            setNameEdit(false);
-          }} 
-          className={nameEdit ? 'user-list__edit_active': ''} />
+        <InputEdit 
+          reference={nameRef}
+          state={[nameEdit, setNameEdit]}
+          newProps={{id: props.id, value: nameRef.current?.value, text: 'name'}}
+        />
       </div>
       <div 
        
@@ -90,23 +78,11 @@ const NewUser: FC<Props> = (props): JSX.Element => {
           <label className='user-list__info'>nickname: </label>
         </div>
         <span>{props.username}</span>
-        <input 
-          maxLength={50}
-          ref={nickRef}
-          onKeyUp={(event): void => {
-            if(event.key ==='Enter') {
-              setNickNameEdit(false);    
-            }
-          }}
-          onChange={(): void => {
-            if(nickRef.current){
-              dispatch(changeTextInUser({id: props.id, value: nickRef.current.value, text: 'username'}));
-            }  
-          }}
-          onBlur={(): void => { 
-            setNickNameEdit(false);
-          }} 
-          className={nickNameEdit ? 'user-list__edit_active': ''} />
+        <InputEdit 
+          reference={nickRef}
+          state={[nickNameEdit, setNickNameEdit]}
+          newProps={{id: props.id, value: nickRef.current?.value, text: 'username'}}
+        />
       </div>
       <div 
         onDoubleClick={(event): void => {
@@ -119,23 +95,11 @@ const NewUser: FC<Props> = (props): JSX.Element => {
           <label className='user-list__info'>email: </label>
         </div>
         <span>{props.email}</span>
-        <input 
-          maxLength={50}
-          ref={mailRef}
-          onKeyUp={(event): void => {
-            if(event.key ==='Enter') {
-              setEmailEdit(false);    
-            }
-          }}
-          onChange={(): void => {
-            if(mailRef.current){
-              dispatch(changeTextInUser({id: props.id, value: mailRef.current.value, text: 'email'}));
-            }  
-          }}
-          onBlur={(): void => { 
-            setEmailEdit(false);
-          }} 
-          className={emailEdit ? 'user-list__edit_active': ''} />
+        <InputEdit 
+          reference={mailRef}
+          state={[emailEdit, setEmailEdit]}
+          newProps={{id: props.id, value: mailRef.current?.value, text: 'email'}}
+        />
       </div>
       <div className="user-list__dell-button">
         <span onClick={(): void => {
