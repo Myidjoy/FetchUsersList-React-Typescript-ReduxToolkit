@@ -18,11 +18,14 @@ const ButtonForm: FC<Props> = (props): JSX.Element => {
     if (requestLogin === login && requestPassword === password) {
       dispatch(fetchUsers());
       setEmptyInput.forEach(elem => elem(''));
-    }
-    dispatch(changeValidate());
-    setTimeout(() => {
+    } else {
       dispatch(changeValidate());
-    }, 1000);
+
+      setTimeout(() => {
+        dispatch(changeValidate());
+      }, 1000);
+    }
+    
   };
   return (
     <button onClick={(): void => {
