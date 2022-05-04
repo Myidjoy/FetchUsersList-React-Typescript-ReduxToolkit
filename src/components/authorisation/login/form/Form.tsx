@@ -31,8 +31,11 @@ const Form = (): JSX.Element => {
     }
     
   };
+
+  const {validate} = useAppSelector(state => state.valid);
   return (
     <div className='authorisation__form'>
+      {validate ? <h1 className='authorisation__validation'>incorrect login or password</h1> : null}
       {
         inputs.map(input => <InputForm 
           key={input.id} 

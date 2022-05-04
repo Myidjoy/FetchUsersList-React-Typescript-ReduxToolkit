@@ -1,6 +1,7 @@
 import React, {FC}from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../../app/hooks';
 import {fetchUsers} from '../../../../../reducers/userReducer';
+import {changeValidate} from '../../../../../reducers/validateReducer';
 
 type Props = {
   loginInput: string,
@@ -18,6 +19,10 @@ const ButtonForm: FC<Props> = (props): JSX.Element => {
       dispatch(fetchUsers());
       setEmptyInput.forEach(elem => elem(''));
     }
+    dispatch(changeValidate());
+    setTimeout(() => {
+      dispatch(changeValidate());
+    }, 1000);
   };
   return (
     <button onClick={(): void => {
