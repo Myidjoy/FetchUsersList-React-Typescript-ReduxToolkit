@@ -41,6 +41,7 @@ const Header: FC = (): JSX.Element => {
     <header className='user-list__header'>
       <div className='user-list__input-container'>
         <input 
+          autoComplete='off'
           ref={searchRef}
           className={classActive.join('')}
           onChange={(): void => {

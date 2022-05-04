@@ -76,7 +76,9 @@ const NewUser: FC<Props> = (props): JSX.Element => {
         <div className="user-list__container-info">
           <label className='user-list__info'>nickname: </label>
         </div>
-        <span>{props.username}</span>
+        <span className={nickNameEdit ? 'user-list__text_disabled': ''}>
+          {props.username}
+        </span>
         <InputEdit 
           reference={nickRef}
           state={[nickNameEdit, setNickNameEdit]}
@@ -93,7 +95,9 @@ const NewUser: FC<Props> = (props): JSX.Element => {
         <div className="user-list__container-info">
           <label className='user-list__info'>email: </label>
         </div>
-        <span>{props.email}</span>
+        <span className={emailEdit ? 'user-list__text_disabled': ''}>
+          {props.email}
+        </span>
         <InputEdit 
           reference={mailRef}
           state={[emailEdit, setEmailEdit]}
