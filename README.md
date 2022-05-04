@@ -14,6 +14,12 @@ The "Find" field should be cleared by yourself.
 
 //////////////////////////////////////////
 
+View this project here  - https://test-task-phi.vercel.app/
+
+only computer !
+
+/////////////////////////////////////////
+
 At first you should create a directory for the project.
 
 Next step is to clone this repository => git clone https://github.com/Myidjoy/test-task.git
