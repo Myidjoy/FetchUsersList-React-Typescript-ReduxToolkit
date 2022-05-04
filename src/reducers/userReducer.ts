@@ -34,29 +34,48 @@ const userSlice = createSlice({
     },
     changeTextInUser(state, action: PayloadAction<{id: number, value: string, text: string}>) {
       if(action.payload.text === 'name') {
-        state.users = state.users.map(user => {
-          if(user.id === action.payload.id) {
+        state.searchingUsers = state.searchingUsers.map(user => {
+          if(user.id === action.payload.id) {            
             user.name = action.payload.value;
           }
 
           return user;
         });
 
-        state.searchingUsers = state.users;
+        state.users = state.users.map(user => {
+          if(user.id === action.payload.id) {            
+            user.name = action.payload.value;
+          }
+
+          return user;
+        });
       }      
 
       if(action.payload.text === 'username') {
-        state.users = state.users.map(user => {
+        state.searchingUsers = state.searchingUsers.map(user => {
           if(user.id === action.payload.id) {
             user.username = action.payload.value;
           }
 
           return user;
         });
-        state.searchingUsers = state.users;
+        state.users = state.users.map(user => {
+          if(user.id === action.payload.id) {            
+            user.username = action.payload.value;
+          }
+
+          return user;
+        });
       }   
 
       if(action.payload.text === 'email') {
+        state.searchingUsers = state.searchingUsers.map(user => {
+          if(user.id === action.payload.id) {
+            user.email = action.payload.value;
+          }
+
+          return user;
+        });
         state.users = state.users.map(user => {
           if(user.id === action.payload.id) {
             user.email = action.payload.value;
@@ -64,7 +83,6 @@ const userSlice = createSlice({
 
           return user;
         });
-        state.searchingUsers = state.users;
       }   
       
     },

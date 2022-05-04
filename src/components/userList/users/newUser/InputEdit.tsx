@@ -13,22 +13,24 @@ const InputEdit: FC<Props> = (props) => {
   const [value, setValue] = state;
   const dispatch = useAppDispatch();
 
+  const authentication = (): void => {
+    if(reference.current)  {
+      dispatch(changeTextInUser({id, text, value: reference.current?.value}));
+      setValue(false);   
+    }
+  };
+
   return (
     <input
       maxLength={50}
       ref={reference}
       onKeyUp={(event): void => {
-        if(event.key ==='Enter') {
-          setValue(false);    
+        if(event.key ==='Enter') {          
+          authentication();
         }
-      }}
-      onChange={(): void => {
-        if(reference.current){
-          dispatch(changeTextInUser({id, text, value: reference.current?.value}));
-        }  
-      }}
+      }}      
       onBlur={(): void => { 
-        setValue(false);
+        authentication();
       }} 
       className={value ? 'user-list__edit_active': ''} 
     />
