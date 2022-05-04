@@ -7,7 +7,7 @@ the password: admin,
 
 next step is to click on the button 'apply'
 
-You can change fields ( name, username, email) by double clicking on them.
+You can change fields ( name, username, email) by double clicking on them and apply the changes pressing the by by Enter.
 
 The "Find" field should be cleared by yourself.
 
