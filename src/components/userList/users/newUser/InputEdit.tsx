@@ -1,24 +1,19 @@
 import React, { FC } from 'react';
 import { useAppDispatch } from '../../../../app/hooks';
 import { changeTextInUser } from '../../../../reducers/userReducer';
+
 type Props = {
   reference: {current: (HTMLInputElement | null)},
   state: [value: boolean, setValue: React.Dispatch<React.SetStateAction<boolean>>],
   newProps: {id: number, text: string, value: string | undefined}
 }
+type InputEditProps = {
+  reference: {current: (HTMLInputElement | null)},
+  value: boolean,
+  authentication: () => void
+}
 
-const InputEdit: FC<Props> = (props) => {
-  const {reference, state, newProps} = props;
-  const {id, text } = newProps;
-  const [value, setValue] = state;
-  const dispatch = useAppDispatch();
-
-  const authentication = (): void => {
-    if(reference.current)  {
-      dispatch(changeTextInUser({id, text, value: reference.current?.value}));
-      setValue(false);   
-    }
-  };
+const InputEdit: FC<InputEditProps> = ({reference, value, authentication}) => {
 
   return (
     <input
@@ -37,4 +32,22 @@ const InputEdit: FC<Props> = (props) => {
   );
 };
 
-export default InputEdit;
+const wrapperInputEdit = (Component: FC<InputEditProps>) => (props: Props): JSX.Element => {
+  const {reference, state, newProps} = props;
+  const {id, text } = newProps;
+  const [value, setValue] = state;
+  const dispatch = useAppDispatch();
+
+  const authentication = (): void => {
+    if(reference.current)  {
+      dispatch(changeTextInUser({id, text, value: reference.current?.value}));
+      setValue(false);   
+    }
+  };
+
+  return <Component reference={reference} value={value} authentication={authentication} />;
+};
+
+const newInputEdit = wrapperInputEdit(InputEdit);
+
+export default newInputEdit;
